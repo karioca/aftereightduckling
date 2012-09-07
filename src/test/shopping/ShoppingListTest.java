@@ -17,7 +17,7 @@ public class ShoppingListTest {
 	FoodItem[] fruits = new FoodItem[]{ new FoodItem("Apple"), new FoodItem("Banana"), new FoodItem("Coconut"), new FoodItem("Dewberry") };
 	
 	@Test
-	public void testCreateAndAddToTodoList(){
+	public void testCreateAndAddToTodoList() {
 		
 		ShoppingList list = getList(foods);
 		assertThat(list.tasks.size(), is(not(0)));
@@ -25,7 +25,7 @@ public class ShoppingListTest {
 	}
 	
 	@Test
-	public void testRemoveFromTodoList(){
+	public void testRemoveFromTodoList() {
 		ShoppingList list = getList(foods);
 		System.out.println(list);
 		int size = list.tasks.size();
@@ -39,7 +39,7 @@ public class ShoppingListTest {
 	}
 	
 	@Test
-	public void testUndoAdd(){
+	public void testUndoAdd() {
 		ShoppingList list = getList(foods);
 		System.out.println(list);
 		
@@ -62,7 +62,7 @@ public class ShoppingListTest {
 	}
 	
 	@Test
-	public void testHistory(){
+	public void testHistory() {
 		ShoppingList list = getList(fruits);
 		System.out.println("List: " + list);
 		int size = list.tasks.size();

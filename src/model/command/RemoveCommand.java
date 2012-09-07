@@ -5,11 +5,10 @@ import model.shopping.ShoppingList;
 
 public class RemoveCommand implements Command {
 
-	// receiver
 	public ShoppingList list;
 	public FoodItem task;
 	
-	public RemoveCommand(ShoppingList list, FoodItem task){
+	public RemoveCommand(ShoppingList list, FoodItem task) {
 		this.list = list;
 		this.task = task;
 	}
@@ -27,8 +26,7 @@ public class RemoveCommand implements Command {
 	}
 	
 	@Override
-	public String toString(){
+	public String toString() {
 		return "Remove " + task;
 	}
-
 }

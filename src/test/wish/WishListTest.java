@@ -22,7 +22,7 @@ public class WishListTest {
 	public void testAddToWishList(){
 		WishList list = new WishList();
 		User user = new User("Kari");
-		list.add(new Wish());
+		list.add(new Wish(), user);
 		assertEquals(1, list.size());
 	}
 	
@@ -32,12 +32,12 @@ public class WishListTest {
 		User user = new User("Kari");
 		
 		Wish wish = new Wish();{ wish.title = "My Greatest Desire";	}
-		list.add(wish);
+		list.add(wish, user	);
 		System.out.println("Elements in list: " + list.size() + " . " + list.toString());
-		list.remove(wish);
+		list.remove(wish, user);
 		System.out.println("Elements in list: " + list.size() + " . " + list.toString());
 		assertEquals(0, list.size());
-		list.remove(wish);
+		list.remove(wish, user);
 		System.out.println("Elements in list: " + list.size() + " . " + list.toString());
 		assertEquals(0, list.size());	
 	}
@@ -52,7 +52,7 @@ public class WishListTest {
 		
 
 		Wish first = list.elements.get(0);
-		list.add(first);
+		list.add(first, user);
 		System.out.println(list);
 		System.out.println(user);
 		
@@ -79,7 +79,7 @@ public class WishListTest {
 		System.out.println(list);
 		
 		Wish first = list.elements.get(0);
-		list.add(first);
+		list.add(first, user);
 		System.out.println(list);
 		System.out.println(user);
 		list.undo(user);
@@ -119,7 +119,7 @@ public class WishListTest {
 		Wish[] wishes = new Wish[]{ wish, wish1, wish2 };
 				
 		for (Wish a : wishes){
-			list.add(a);	}		
+			list.add(a, user);	}		
 	}
 
 }

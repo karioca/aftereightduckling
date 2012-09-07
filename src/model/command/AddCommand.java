@@ -1,31 +1,34 @@
 package model.command;
 
-import java.util.List;
+import model.shopping.ShoppingList;
+import model.shopping.FoodItem;
 
-public class AddCommand<T> implements Command<T> {
 
-	protected String actionType;
-	protected T memento;
+public class AddCommand implements Command {
+
+	// receiver
+	public ShoppingList list;
+	public FoodItem task;
 	
-	public AddCommand() {
-		actionType = "Add";
-	}
-
-	@Override
-	public void doStuff(List<T> list, T newT) {
-		if(newT != null) 
-			memento = newT;
-		list.add(memento);
-	}
-
-	@Override
-	public void undoStuff(List<T> list){
-		list.remove(memento);
+	public AddCommand(ShoppingList list, FoodItem task){
+		this.list = list;
+		this.task = task;
 	}
 	
 	@Override
-	public String toString() {
-		return actionType;
+	public boolean doStuff() {
+		list.add(task);
+		return true;
+	}
+
+	@Override
+	public void unDoStuff() {
+		list.remove(task);	
+	}
+	
+	@Override
+	public String toString(){
+		return "Add " + task;
 	}
 
 }

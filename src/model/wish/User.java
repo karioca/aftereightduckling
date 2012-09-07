@@ -1,15 +1,15 @@
 package model.wish;
 
-import model.command.CommandKeeper;
+import model.command.OldCommandKeeper;
 
 public class User {
 
 	public String name;
-	public CommandKeeper keeper;
+	public OldCommandKeeper keeper;
 
 	
 	public User(String name){
-		keeper = new CommandKeeper();
+		keeper = new OldCommandKeeper();
 		this.name = name;
 	}
 	

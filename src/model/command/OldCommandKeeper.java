@@ -5,13 +5,13 @@ import java.util.Calendar;
 import java.util.List;
 
 
-public class CommandKeeper<T, where extends Command> {
+public class OldCommandKeeper<T, where extends OldCommand> {
 	public int id;
 	public List<T> commands;
 	public T undoneAction;
 	
 
-	public CommandKeeper() {
+	public OldCommandKeeper() {
 		id = makeID();
 		commands = new ArrayList<T>();
 	}

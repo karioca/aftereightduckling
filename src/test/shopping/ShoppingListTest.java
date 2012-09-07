@@ -2,8 +2,8 @@ package test.shopping;
 
 import model.command.AddCommand;
 import model.command.Command;
-import model.shopping.MagicButton;
-import model.shopping.RemoveCommand;
+import model.command.MagicButton;
+import model.command.RemoveCommand;
 import model.shopping.ShoppingList;
 import model.shopping.FoodItem;
 
@@ -111,9 +111,9 @@ public class ShoppingListTest {
 		System.out.println("History: " + button);		
 	}
 
-	private ShoppingList getList(FoodItem[] l) {
+	private ShoppingList getList(FoodItem[] items) {
 		ShoppingList list = new ShoppingList();		
-		for(FoodItem t : l){
+		for(FoodItem t : items){
 			list.add(t);
 		}
 		return list;

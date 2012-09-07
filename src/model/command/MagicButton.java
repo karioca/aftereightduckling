@@ -1,9 +1,8 @@
-package model.shopping;
+package model.command;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.command.Command;
 
 public class MagicButton {
 	

@@ -1,6 +1,7 @@
-package model.shopping;
+package model.command;
 
-import model.command.Command;
+import model.shopping.FoodItem;
+import model.shopping.ShoppingList;
 
 public class RemoveCommand implements Command {
 

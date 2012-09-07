@@ -6,29 +6,28 @@ import model.shopping.FoodItem;
 
 public class AddCommand implements Command {
 
-	// receiver
 	public ShoppingList list;
-	public FoodItem task;
+	public FoodItem item;
 	
-	public AddCommand(ShoppingList list, FoodItem task){
+	public AddCommand(ShoppingList list, FoodItem item){
 		this.list = list;
-		this.task = task;
+		this.item = item;
 	}
 	
 	@Override
 	public boolean doStuff() {
-		list.add(task);
+		list.add(item);
 		return true;
 	}
 
 	@Override
 	public void unDoStuff() {
-		list.remove(task);	
+		list.remove(item);	
 	}
 	
 	@Override
 	public String toString(){
-		return "Add " + task;
+		return "Add " + item;
 	}
 
 }
